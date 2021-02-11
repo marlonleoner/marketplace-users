@@ -28,12 +28,6 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-//  Não vamos permitir buscar usuários
-//	@GetMapping
-//	public List<UserDto> findAll(@RequestParam(defaultValue = "") String name) {
-//		return userService.findAll(name).stream().map(UserDto::new).collect(Collectors.toList());
-//	}
-
 	@GetMapping
 	public UserDto get() {
 		return new UserDto(userService.get());
