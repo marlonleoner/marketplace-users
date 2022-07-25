@@ -52,7 +52,7 @@ public class AuthService implements UserDetailsService {
 		User user = userService.findByEmail(email);
 
 		if (user == null) {
-			throw new UsernameNotFoundException("User not found.");
+			throw new UsernameNotFoundException("Usuário [Null] não foi encontrado.");
 		}
 
 		return user;

@@ -29,7 +29,7 @@ public class UserService {
 	public User findById(Long id) {
 		Optional<User> user = userRepository.findById(id);
 		if (!user.isPresent()) {
-			throw new ObjectNotFoundException("Usu√°rio n√£o encontrado.");
+			throw new ObjectNotFoundException("Usu·rio n„o encontrado.");
 		}
 
 		return user.get();
@@ -42,7 +42,7 @@ public class UserService {
 	public void verifyEmailAlreadyExists(String email) {
 		User user = userRepository.findByEmail(email);
 		if (user != null) {
-			throw new ObjectAlreadyExistsException("Email j√° cadastrado.");
+			throw new ObjectAlreadyExistsException("Email j· cadastrado.");
 		}
 	}
 
