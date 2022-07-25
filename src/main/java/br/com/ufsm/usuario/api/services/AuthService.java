@@ -53,7 +53,7 @@ public class AuthService implements UserDetailsService {
 		User user = userService.findByEmail(email);
 
 		if (user == null) {
-			throw new UsernameNotFoundException("Bad credentials");
+			throw new UsernameNotFoundException("User not found.");
 		}
 
 		return user;
