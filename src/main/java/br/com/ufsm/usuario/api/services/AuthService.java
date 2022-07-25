@@ -41,8 +41,7 @@ public class AuthService implements UserDetailsService {
 			token = tokenUtil.generateToken(authentication);
 		} catch (AuthenticationException ex) {
 			logger.error(" > authenticate() - {}: {}", ex.getClass().getSimpleName(), ex.getMessage());
-
-			throw new BadCredentialsException("Seu e-mail ou senha est√£o incorretos.");
+			throw new BadCredentialsException("Seu e-mail e/ou senha est„o incorretos.");
 		}
 
 		return token;
@@ -53,7 +52,7 @@ public class AuthService implements UserDetailsService {
 		User user = userService.findByEmail(email);
 
 		if (user == null) {
-			throw new UsernameNotFoundException("Bad credentials");
+			throw new UsernameNotFoundException("Usu·rio n„o encontrado.");
 		}
 
 		return user;
